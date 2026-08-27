@@ -5,16 +5,17 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-ARQUIVO_JSON = "produtos.json"
+ARQUIVO_JSON = "produtos_14.json"
 
-# Aula 13 — API completa (consolidação).
+# Aula 14 — API completa (consolidação).
 # Nenhum conceito novo: reúne CRUD, validação, filtros, busca, ordenação,
-# persistência em produtos.json e paginação.
+# persistência em produtos_14.json e paginação.
 
 
 class ProdutoInput(BaseModel):
     nome: str | None = None
     preco: float | None = None
+    marca: str | None = None
 
 
 class RespostaPaginada(BaseModel):
@@ -46,6 +47,17 @@ def validar_produto(nome, preco):
         erros["preco"] = "O preço deve ser maior que zero."
     elif round(preco, 2) != preco:
         erros["preco"] = "O campo deve ter no máximo 2 casas decimais."
+
+    if marca is None:
+        erros["marca"] = "A marca é obrigatória."
+    elif not isinstance(marca, str):
+        erros["marca"] = "O campo deveria ser uma string."
+    else:
+        marca_limpa = marca.strip()
+        if marca_limpa == "":
+            erros["marca"] = "O campo não pode ser vazio."
+        elif len(marca_limpa) < 2 or len(marca_limpa) > 50:
+            erros["marca"] = "A marca deve possuir entre 2 a 50 caracteres."
 
     return erros
 
