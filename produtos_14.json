@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "nome": "Pen drive 128 GB Kingston",
-    "preco": 64.99,
-    "marca": "Kingston"
+    "nome": "Notebook Pro",
+    "preco": 3800.0,
+    "marca": "Lenovo"
   },
   {
     "id": 2,
@@ -358,5 +358,11 @@
     "nome": "Cadeira de Escritório",
     "preco": 699.9,
     "marca": "Flexform"
+  },
+  {
+    "id": 61,
+    "nome": "Monitor Ultra",
+    "preco": 1200.0,
+    "marca": "Dell"
   }
 ]
