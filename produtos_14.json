@@ -364,5 +364,19 @@
     "nome": "Monitor Ultra",
     "preco": 1200.0,
     "marca": "Dell"
+  },
+  {
+    "id": 62,
+    "nome": "Mouse Sem Fio",
+    "preco": 80.0,
+    "marca": "Logitech",
+    "estoque": 25
+  },
+  {
+    "id": 63,
+    "nome": "Teclado Mecânico",
+    "preco": 250.0,
+    "marca": "Keychron",
+    "estoque": 0
   }
 ]
